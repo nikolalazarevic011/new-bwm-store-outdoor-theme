@@ -1,0 +1,48 @@
+{{#partial "page"}}
+<div class="page">
+    <aside class="page-sidebar">
+        {{> components/epic/sidebar}}
+    </aside>
+
+    <main class="page-content">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <h1 class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
+        {{> components/gift-certificate/navigation gift_page='balance'}}
+
+        <div class="account">
+            <h3>{{lang 'gift_certificate.balance.heading'}}</h3>
+            <p>
+                <strong>{{lang 'gift_certificate.balance.intro' }}</strong>
+            </p>
+
+            {{#if gift_certificate}}
+                {{#if gift_certificate.error}}
+                    {{> components/common/alert/alert-error gift_certificate.error}}
+                {{else}}
+                    <h1>{{gift_certificate.balance.formatted}}</h1>
+                    <h3>{{gift_certificate.code}}</h3>
+                {{/if}}
+            {{/if}}
+
+            <form class="form form--oneField" id="gift-certificate-balance" method="get">
+                <input type="hidden" name="action" value="balance">
+                <div class="form-field">
+                    <label class="form-label" for="giftcertificatecode">
+                        {{lang 'forms.gift_certificate.balance.code' }}
+                    </label>
+                    <div class="form-prefixPostfix wrap">
+                        <input class="form-input" id="giftcertificatecode" name="giftcertificatecode">
+                        <input type="submit" class="button button--primary form-prefixPostfix-button--postfix" value="{{lang 'forms.gift_certificate.balance.submit_value' }}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="sidebar-region">
+        {{{region name="epic_sidebar"}}}
+        {{{region name="epic_sidebar--global"}}}
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

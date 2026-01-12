@@ -1,0 +1,15 @@
+<div class="body" id="main-content" data-currency-code="{{currency_selector.active_currency_code}}">
+    {{#and theme_settings.epic-toggle-body-background-image (if (length theme_settings.epic-body-background-image) '>' 1)}}
+      <picture class="page-bg">
+        <img src="{{getImageManagerImage theme_settings.epic-body-background-image}}" alt="Page background" class="page-bg-image" fetchpriority="high" loading="eager" height="auto" width="auto">
+      </picture>
+    {{/and}}
+    {{#block "hero"}} {{/block}}
+    {{{region name="full_width_above_content"}}}
+    <div class="container">
+        {{#block "page"}} {{/block}}
+    </div>
+    {{{region name="full_width_below_content"}}}
+    {{> components/common/modal/modal}}
+    {{> components/common/alert/alert-modal}}
+</div>

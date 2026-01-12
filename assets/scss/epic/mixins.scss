@@ -1,0 +1,66 @@
+// MIXINS
+@mixin sidebarState($type, $direction) {
+  @if $type == flyout {
+    @include sidebarFlyout($direction: $direction);
+  } @else if $type == accordion {
+    // WIP
+  } @else {
+    @error "Unknown type #{$type}.";
+  }
+}
+
+@mixin sidebarFlyout($direction) {
+  .navList {
+    &-item {
+      position: relative;
+
+      &--has-subMenu {
+        &:active,
+        &:focus,
+        &:hover {
+          .navList {
+            &-subMenu {
+              @include breakpoint('medium') {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-subMenu {
+      &-item {
+        position: relative;
+
+        &--has-subMenu {
+          &:active,
+          &:focus,
+          &:hover {
+            .navList {
+              &-childList {
+                @include breakpoint('medium') {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-subMenu,
+    &-childList {
+      border-radius: 0 remCalc(5) remCalc(5) remCalc(5);
+      display: none;
+      @if $direction == right {
+        right: 100%;
+      } @else {
+        left: 100%;
+      }
+      position: absolute;
+      top: 0;
+      width: remCalc(250);
+    }
+  }
+}

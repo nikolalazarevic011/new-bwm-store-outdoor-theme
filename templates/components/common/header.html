@@ -1,0 +1,50 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+<header class="header{{#if theme_settings.epic-sitewide-message}} header--epic-sitewide{{/if}}{{#if theme_settings.epic-toggle-sticky-header}} header-sticky{{/if}}" role="banner">
+    {{#if theme_settings.epic-sitewide-message}}
+        {{{region name="epic_sitewide_message--global"}}}
+    {{/if}}
+    <div class="container">
+        <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+            <span class="mobileMenu-toggleIcon">Toggle menu</span>
+        </a>
+
+        {{#if page_type '===' 'default'}}
+            <h1 class="header-logo header-logo--left">
+                {{> components/common/store-logo}}
+            </h1>
+        {{else}}
+            <div class="header-logo header-logo--left">
+                {{> components/common/store-logo}}
+            </div>
+        {{/if}}
+
+        {{#if theme_settings.epic-toggle-search}}
+            <div class="header-search" data-epic-search>
+                {{> components/common/quick-search name='nav-quick-search'}}
+            </div>
+        {{/if}}
+
+        {{> components/common/navigation}}
+
+    </div>
+    <div class="navPages-wrap">
+      <div class="container">
+        <div class="navPages-container navPages-container--{{theme_settings.epic-align-navigation}}" id="menu" data-menu>
+          {{> components/common/navigation-menu}}
+        </div>
+      </div>
+    </div>
+</header>
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}

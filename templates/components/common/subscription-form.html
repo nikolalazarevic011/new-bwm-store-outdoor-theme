@@ -1,0 +1,51 @@
+{{#unless location '===' 'column'}}
+<div class="newsletter-box__content">
+    <h2 class="newsletter-box__heading">{{lang 'newsletter.subscribe'}}</h2>
+    <p class="newsletter-box__intro">{{lang 'newsletter.subscribe_intro'}}</p>
+</div>
+{{/unless}}
+
+<form class="form" action="{{urls.subscribe.action}}" method="post">
+    <fieldset class="form-fieldset">
+        <input type="hidden" name="action" value="subscribe">
+        <input type="hidden" name="nl_first_name" value="bc">
+        <input type="hidden" name="check" value="1">
+        <div class="form-field">
+            <label class="form-label is-srOnly" for="nl_email">{{lang 'common.email_address'}}</label>
+            <div class="form-prefixPostfix wrap">
+                <input class="form-input"
+                       id="nl_email"
+                       name="nl_email"
+                       type="email"
+                       value="{{customer.email}}"
+                       placeholder="{{lang 'newsletter.email_placeholder'}}"
+                       aria-describedby="alertBox-message-text"
+                       aria-required="true"
+                       autocomplete="email"
+                       required
+                >
+                {{#unless location '===' 'column'}}
+                    <input class="button button--primary form-prefixPostfix-button--postfix"
+                        type="submit"
+                        value="{{lang 'newsletter.subscribe_submit'}}"
+                    >
+                {{else}}
+                    <button class="button button--primary form-prefixPostfix-button--postfix"
+                        type="submit"
+                        aria-label="{{lang 'newsletter.subscribe_submit'}}"
+                    >
+                        <i class="icon" aria-hidden="true">
+                            <svg><use href="#icon-epic-plane" /></svg>
+                        </i>
+                    </button>
+                {{/unless}}
+            </div>
+            {{#if location '===' 'column'}}
+                <p class="newsletter-column__intro">{{lang 'newsletter.subscribe_intro'}}</p>
+            {{/if}}
+            {{#if settings.show_newsletter_summary }}
+                <div class="newsletter-box__summary">{{{settings.newsletter_summary}}}</div>
+            {{/if}}
+        </div>
+    </fieldset>
+</form>

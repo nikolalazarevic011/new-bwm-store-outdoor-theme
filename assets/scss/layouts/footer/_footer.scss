@@ -1,0 +1,443 @@
+// =============================================================================
+// FOOTER (CSS)
+// =============================================================================
+
+
+// Layout and columns
+// -----------------------------------------------------------------------------
+//
+// 1. To enable the grid's display: inline-block; to work properly, we need to
+//    remove the white-space that it creates between columns with font-size: 0;
+// 2. Re-set the font-size that was reduced to 0 in point 1 for children.
+// 3. Fix for text flickers on windows devices
+//
+// -----------------------------------------------------------------------------
+
+.footer {
+    background-color: $footer-background;
+    padding: spacing("double") 0 0;
+    position: relative;
+    transform: translateZ(0); // 3
+
+    @include breakpoint("medium") {
+      margin-top: 3rem;
+      padding-bottom: spacing("double");
+    }
+}
+
+.footer-title-sr-only {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+
+.footer-info {
+    @include grid-row($behavior: nest);
+    font-size: 0; // 1
+}
+
+.footer-info-col {
+    @include grid-column(12);
+    color: stencilColor("color-textSecondary");
+    display: inline-block;
+    float: none;
+    font-size: fontSize("base"); // 2
+    overflow-wrap: break-word;
+    text-align: center;
+    vertical-align: top;
+    // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here
+    -ms-word-break: break-all;
+    @include breakpoint("small") {
+        text-align: left;
+    }
+
+    &:first-child {
+        margin-bottom: 1.5rem;
+    }
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    .socialLinks {
+        margin: 1rem 0 0;
+    }
+}
+
+.footer-info-col--social {
+    width: 100%;
+}
+
+.footer-info-col--left {
+    @include breakpoint("small") {
+        padding: 0;
+    }
+}
+
+.footer-info-col--right {
+    @include breakpoint("small") {
+        left: 50%;
+        position: inherit;
+        width: 50%;
+    }
+
+    @include breakpoint("medium") {
+        left: 0;
+        padding: 0;
+        text-align: right;
+        width: 100%;
+    }
+}
+
+
+// Content
+// -----------------------------------------------------------------------------
+
+.footer-info-heading {
+    color: $footer-heading-fontColor;
+    font-size: fontSize("base");
+    text-transform: inherit;
+}
+
+.footer-info-list {
+    list-style: none;
+    margin-left: 0;
+
+    a {
+        color: stencilColor("color-textSecondary");
+        text-decoration: none;
+
+        &:hover {
+            color: stencilColor("color-textSecondary--hover");
+        }
+    }
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include breakpoint("small") {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    &__split {
+        @include breakpoint("small") {
+            align-items: end;
+            justify-content: space-between;
+        }
+    }
+
+    &--has-bdr {
+        border-top: 1px solid stencilColor("epic-copyright-border-top-color");
+        padding: 1rem 0;
+    }
+
+    &--left {
+        @include breakpoint("small") {
+            justify-content: flex-start;
+        }
+    }
+
+    &--right {
+        @include breakpoint("small") {
+            justify-content: flex-end;
+        }
+    }
+
+    .powered-by {
+        color: stencilColor("color-textSecondary");
+        font-size: fontSize("tiny");
+        margin: 0;
+    }
+
+    &-links {
+        align-items: flex-start;
+        display: flex;
+        gap: remCalc(10);
+        list-style: none;
+        margin: 1rem 0 0;
+
+        @include breakpoint('small') {
+            margin: 0 0 0 1rem;
+        }
+    }
+
+    a {
+        color: stencilColor("color-textSecondary");
+        font-size: remCalc(12);
+        text-decoration: none;
+
+        &:hover {
+            color: stencilColor("color-textSecondary--hover");
+        }
+    }
+
+    .socialLinks,
+    .footer-payment-icons {
+        flex-grow: 1;
+        margin: 1rem 0 0;
+
+        @include breakpoint('small') {
+            margin: 0 0 0 1rem;
+            text-align: right;
+        }
+    }
+
+    .footer-payment-icons {
+      @include breakpoint('small') {
+        justify-content: end;
+      }
+    }
+}
+
+.footer-payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: spacing("single");
+
+    @include breakpoint("small") {
+        justify-content: normal;
+    }
+
+    @include breakpoint("medium") {
+        margin-top: spacing("double");
+    }
+
+    .footer-payment-icon {
+        height: remCalc(40);
+        margin: spacing("quarter");
+        vertical-align: middle;
+        width: remCalc(50);
+    }
+
+    svg {
+        fill: stencilColor("icon-color");
+    }
+}
+
+.footer-newsletter-summary {
+    text-align: left;
+}
+
+//
+// epic | Newsletter/Footer
+//
+// -----------------------------------------------------------------------------
+.newsletter-box {
+    background: stencilColor("epic-newsletter-background-color");
+    border-radius: stencilNumber("epic-newsletter-border-radius");
+    color: stencilColor("epic-newsletter-font-color");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+
+    @include breakpoint('small') {
+        text-align: left;
+    }
+
+    @include breakpoint('medium') {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 3rem 0;
+        padding: 3rem;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__heading {
+        color: stencilColor("epic-newsletter-heading-color");
+        font-size: remCalc(22);
+        margin: 0;
+
+        @include breakpoint('medium') {
+            margin-bottom: 0.785rem;
+        }
+    }
+
+    &__intro {
+        @include breakpoint('medium') {
+            margin: 0;
+        }
+    }
+
+    .form {
+        &, &-field {
+            margin: 0;
+        }
+
+        &.prefixPostfix {
+            .form {
+                &-input,
+                &-button {
+                    @include breakpoint('medium') {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    &__summary {
+        font-size: stencilNumber("epic-newsletter-summary-size");
+        margin-top: 0.5rem;
+
+        @include breakpoint('small') {
+            margin: 0;
+        }
+    }
+}
+
+.newsletter-column {
+    color: stencilColor("epic-newsletter-font-color");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @include breakpoint('small') {
+        text-align: left;
+    }
+
+    @include breakpoint('medium') {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__intro {
+        margin: 0.5rem 0 0;
+
+        @include breakpoint('medium') {
+            margin: 0.5rem 0;
+        }
+    }
+
+    .form {
+        &, &-field {
+            margin: 0;
+        }
+
+        &-prefixPostfix {
+            flex-wrap: nowrap;
+            position: relative;
+
+            .form {
+                &-input {
+                    padding-right: remCalc(35);
+                    width: 100%;
+                }
+            }
+
+            .button {
+                align-items: center;
+                background: none;
+                border: none;
+                border-radius: 0;
+                color: stencilColor("color-textBase");
+                display: flex;
+                height: 100%;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                right: remCalc(5);
+                top: 0;
+                width: remCalc(30);
+
+                &:active,
+                &:focus,
+                &:hover {
+                    color: stencilColor("color-textBase--hover");
+                }
+            }
+        }
+    }
+
+    .newsletter-box__summary {
+        margin: 0 0 0.5rem;
+
+        @include breakpoint('small') {
+            margin: 0;
+        }
+    }
+}
+
+.footer-info-cols {
+    &--1 {
+        .footer-info-col {
+            @include breakpoint("medium") {
+                width: width("12/12");
+            }
+        }
+    }
+
+    &--2 {
+        .footer-info-col {
+            @include breakpoint("medium") {
+                width: width("6/12");
+            }
+        }
+    }
+    &--3 {
+        .footer-info-col {
+            @include breakpoint("medium") {
+                width: width("4/12");
+            }
+        }
+    }
+
+    &--4 {
+        .footer-info-col {
+            @include breakpoint("medium") {
+                width: width("3/12");
+            }
+        }
+    }
+
+    &--5 {
+        .footer-info-col {
+            @include breakpoint("medium") {
+                width: 18%;
+            }
+
+            &:first-child {
+                @include breakpoint("medium") {
+                    width: 28%;
+                }
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    padding: 0 0 2rem;
+    text-align: center;
+
+    @include breakpoint('small') {
+        text-align: left;
+    }
+
+    @include breakpoint("medium") {
+        padding-top: 2rem;
+    }
+}

@@ -1,0 +1,134 @@
+<nav class="navUser">
+    {{#if theme_settings.show_channels}}
+        {{> components/common/channel-selector}}
+    {{/if}}
+
+    <ul class="navUser-section navUser-section--alt">
+        {{#if customer.store_credit.value '>' 0}}
+            <li class="navUser-item">
+                <a class="navUser-action navUser-action--storeCredit"
+                   data-dropdown="storeCredit-dropdown"
+                   data-options="align:bottom"
+                   href="{{urls.cart}}"
+                   aria-label="{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}"
+                >
+                    <span class="navUser-action-divider">
+                        {{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}
+                    </span>
+                </a>
+                <div class="dropdown-menu" id="storeCredit-dropdown" data-dropdown-content aria-hidden="true">
+                    {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+                </div>
+            </li>
+        {{/if}}
+        <li class="navUser-item">
+            <a class="navUser-action navUser-item--compare"
+               href="{{urls.compare}}"
+               data-compare-nav
+               aria-label="{{lang 'common.compare'}}"
+            >
+                {{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span>
+            </a>
+        </li>
+        {{#unless theme_settings.epic-toggle-search}}
+            <li class="navUser-item">
+                <button class="navUser-action navUser-action--quickSearch"
+                type="button"
+                id="quick-search-expand"
+                data-search="quickSearch"
+                aria-controls="quickSearch"
+                aria-label="{{lang 'common.search'}}"
+                >
+                    {{lang 'common.search'}}
+                </button>
+            </li>
+        {{/unless}}
+        {{#if settings.gift_certificates_enabled}}
+            <li class="navUser-item">
+                <a class="navUser-action"
+                   href="{{urls.gift_certificate.purchase}}"
+                   aria-label="{{lang 'common.gift_cert'}}"
+                >
+                    <i class="icon" aria-hidden="true">
+                        <svg>
+                            <use href="#icon-epic-gift"></use>
+                        </svg>
+                    </i>
+                    {{#if theme_settings.epic-show-header-icon-labels}}
+                      {{lang 'common.gift_cert'}}
+                    {{/if}}
+                </a>
+            </li>
+        {{/if}}
+        <li class="navUser-item navUser-item--account">
+            <a class="navUser-action"
+                {{#if customer}}
+                href="{{urls.account.index}}"
+                aria-label="{{lang 'common.account'}}"
+                {{else}}
+                href="{{urls.auth.login}}"
+                aria-label="{{lang 'common.login'}}"
+                {{/if}}
+            >
+                <i class="icon" aria-hidden="true">
+                    <svg>
+                        <use href="#icon-epic-user"></use>
+                    </svg>
+                </i>
+                {{#if theme_settings.epic-show-header-icon-labels}}
+                  {{#if customer}}
+                  {{lang 'common.account'}}
+                  {{else}}
+                  {{lang 'common.login'}}
+                  {{/if}}
+                {{/if}}
+            </a>
+            {{#if settings.account_creation_enabled}}
+              {{#if theme_settings.epic-show-header-icon-labels}}
+                {{#unless customer}}
+                    <span class="navUser-or">{{lang 'common.or'}}</span>
+                    <a class="navUser-action"
+                        href="{{urls.auth.create_account}}"
+                        aria-label="{{lang 'common.sign_up'}}"
+                    >
+                        {{lang 'common.sign_up'}}
+                    </a>
+                {{/unless}}
+              {{/if}}
+            {{/if}}
+        </li>
+        {{#or customer (unless settings.hide_price_from_guests)}}
+            {{#gt (length currency_selector.currencies) 1}}
+                <li class="navUser-item navUser-item--currency ">
+                    {{> components/common/currency-selector}}
+                </li>
+            {{/gt}}
+        {{/or}}
+        <li class="navUser-item navUser-item--cart">
+            <a class="navUser-action"
+               data-cart-preview
+               data-dropdown="cart-preview-dropdown"
+               data-options="align:right"
+               href="{{urls.cart}}"
+               aria-label="{{lang 'cart.nav_aria_label'}}"
+            >
+                <i class="icon" aria-hidden="true">
+                    <svg>
+                        <use href="#icon-epic-bag"></use>
+                    </svg>
+                </i>
+                {{#if theme_settings.epic-show-header-icon-labels}}
+                  <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span>
+                {{/if}}
+                <span class="countPill cart-quantity"></span>
+            </a>
+
+            <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+        </li>
+    </ul>
+    {{#unless theme_settings.epic-toggle-search}}
+        <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close>
+            {{> components/common/quick-search name='nav-quick-search'}}
+        </div>
+    {{/unless}}
+</nav>

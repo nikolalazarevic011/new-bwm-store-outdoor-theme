@@ -1,0 +1,2798 @@
+{
+  "regions": {
+    "pages/blog-post": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "post_footer"
+      },
+      {
+        "name": "post_more"
+      },
+      {
+        "name": "post_additional--global"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/brand": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "brand_below_header"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "brand_below_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/blog": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "post_footer"
+      },
+      {
+        "name": "post_more"
+      },
+      {
+        "name": "post_additional--global"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/cart": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "cart_below_totals"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/brands": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "brands_below_header"
+      },
+      {
+        "name": "brands_below_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/category": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "category_above_header"
+      },
+      {
+        "name": "category_below_header"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "category_below_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/checkout": [],
+    "pages/compare": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/contact-us": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/home": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "home_below_carousel"
+      },
+      {
+        "name": "home_above_featured_products"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "home_below_featured_products"
+      },
+      {
+        "name": "home_below_new_products"
+      },
+      {
+        "name": "home_below_top_products"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/order-confirmation": [],
+    "pages/page": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "page_above_content"
+      },
+      {
+        "name": "page_builder_content"
+      },
+      {
+        "name": "page_below_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/product": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "product_below_price"
+      },
+      {
+        "name": "product_below_options"
+      },
+      {
+        "name": "product_below_content"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "product_footer"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/search": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "search_below_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/sitemap": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/subscribed": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/unsubscribe": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/auth/account-created": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/auth/create-account": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/auth/forgot-password": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/auth/login": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/auth/new-password": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/gift-certificate/balance": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/gift-certificate/redeem": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/gift-certificate/purchase": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "epic_sidebar"
+      },
+      {
+        "name": "epic_sidebar--global"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/errors/403": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/errors/404": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/errors/generic": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/unavailable/maintenance": [],
+    "pages/unavailable/hibernation": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/add-address": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/add-payment-method": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/add-return": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/addresses": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/add-wishlist": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/edit-payment-method": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/download-item": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/inbox": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/payment-methods": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/return-saved": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/wishlist-details": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/recent-items": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "product_item_below_price"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/returns": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/wishlists": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/edit": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/orders/details": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/orders/invoice": [],
+    "pages/account/orders/all": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ],
+    "pages/account/orders/completed": [
+      {
+        "name": "epic_sitewide_message--global"
+      },
+      {
+        "name": "header_bottom--global"
+      },
+      {
+        "name": "header_bottom"
+      },
+      {
+        "name": "full_width_above_content"
+      },
+      {
+        "name": "full_width_below_content"
+      },
+      {
+        "name": "page_bottom"
+      },
+      {
+        "name": "newsletter_above--global"
+      },
+      {
+        "name": "newsletter--global"
+      },
+      {
+        "name": "footer_above--global"
+      },
+      {
+        "name": "footer_column_one--global"
+      },
+      {
+        "name": "footer_column_two--global"
+      },
+      {
+        "name": "footer_column_three--global"
+      },
+      {
+        "name": "footer_column_four--global"
+      },
+      {
+        "name": "newsletter--column"
+      },
+      {
+        "name": "footer_column_five--global"
+      },
+      {
+        "name": "footer_below--global"
+      },
+      {
+        "name": "ssl_site_seal--global"
+      }
+    ]
+  },
+  "templates": [
+    "layout/base",
+    "layout/empty",
+    "components/carousel-content-announcement",
+    "components/carousel-content",
+    "components/carousel-play-pause-button",
+    "components/carousel",
+    "components/blog/post",
+    "components/brand/product-listing",
+    "components/brand/show-more",
+    "components/brand/sidebar",
+    "components/account/add-wishlist",
+    "components/account/address-list",
+    "components/account/edit-account",
+    "components/account/messages-form",
+    "components/account/messages-list",
+    "components/account/navigation",
+    "components/account/order-contents",
+    "components/account/orders-list",
+    "components/account/payment-methods-list",
+    "components/account/returns-list",
+    "components/account/wishlist-item-list",
+    "components/account/wishlist-list",
+    "components/category/product-listing",
+    "components/category/shop-by-price",
+    "components/category/show-more",
+    "components/category/sidebar",
+    "components/category/sort-box",
+    "components/epic/sidebar-navigation-list",
+    "components/epic/sidebar",
+    "components/page/contact-us-form",
+    "components/page/rss_feed",
+    "components/search/advanced-search",
+    "components/search/content-count",
+    "components/search/content-listing",
+    "components/search/content-sort-box",
+    "components/search/heading",
+    "components/search/product-count",
+    "components/search/product-listing",
+    "components/search/quick-results",
+    "components/search/show-more",
+    "components/search/sidebar",
+    "components/social/connect",
+    "components/social/instagram",
+    "components/social/twitter",
+    "components/sitemap/links",
+    "components/gift-certificate/navigation",
+    "components/cart/additional-checkout-buttons",
+    "components/cart/content",
+    "components/cart/coupon-input",
+    "components/cart/gift-certificate-input",
+    "components/cart/item-options",
+    "components/cart/item-giftwrap",
+    "components/cart/page-title",
+    "components/cart/preview",
+    "components/cart/shipping-quotes",
+    "components/cart/status-messages",
+    "components/cart/shipping-estimator",
+    "components/cart/totals",
+    "components/cart/modals/configure-product",
+    "components/cart/modals/gift-wrapping-form",
+    "components/faceted-search/faceted-search-navigation",
+    "components/faceted-search/index",
+    "components/faceted-search/range-form",
+    "components/faceted-search/selected-facets",
+    "components/faceted-search/show-more-facets",
+    "components/faceted-search/facets/hierarchy-children",
+    "components/faceted-search/facets/hierarchy",
+    "components/faceted-search/facets/multi",
+    "components/faceted-search/facets/rating",
+    "components/faceted-search/facets/range",
+    "components/common/body",
+    "components/common/cart-preview",
+    "components/common/breadcrumbs",
+    "components/common/channel-selector-mobile",
+    "components/common/channel-selector",
+    "components/common/currency-selector",
+    "components/common/footer",
+    "components/common/header",
+    "components/common/login-for-pricing",
+    "components/common/navigation-dropdown",
+    "components/common/navigation-list-alternate",
+    "components/common/navigation-list",
+    "components/common/navigation-menu",
+    "components/common/navigation",
+    "components/common/paginator",
+    "components/common/polyfill-script",
+    "components/common/payment-icons",
+    "components/common/product-options",
+    "components/common/requireness-msg",
+    "components/common/responsive-img",
+    "components/common/quick-search",
+    "components/common/search-box",
+    "components/common/share",
+    "components/common/social-links",
+    "components/common/subscription-form",
+    "components/common/store-logo",
+    "components/common/wallet-buttons",
+    "components/common/wishlist-dropdown",
+    "components/common/small-paginator",
+    "components/common/modal/modal-close-btn",
+    "components/common/modal/modal",
+    "components/common/alert/alert-error",
+    "components/common/alert/alert-generic",
+    "components/common/alert/alert-info",
+    "components/common/alert/alert-modal",
+    "components/common/alert/alert-success",
+    "components/common/forms/checkbox",
+    "components/common/forms/date",
+    "components/common/forms/date-options",
+    "components/common/forms/multiline",
+    "components/common/forms/password",
+    "components/common/forms/number",
+    "components/common/forms/selectortext",
+    "components/common/forms/text",
+    "components/common/forms/select",
+    "components/common/forms/radio",
+    "components/products/add-to-cart",
+    "components/products/bulk-discount-rates",
+    "components/products/card",
+    "components/products/carousel",
+    "components/products/custom-fields",
+    "components/products/description-tabs",
+    "components/products/grid",
+    "components/products/list-item",
+    "components/products/list",
+    "components/products/filter",
+    "components/products/new",
+    "components/products/price-label",
+    "components/products/price-range",
+    "components/products/price",
+    "components/products/product-aria-label",
+    "components/products/product-badge",
+    "components/products/description",
+    "components/products/product-info",
+    "components/products/product-view",
+    "components/products/quick-view",
+    "components/products/featured",
+    "components/products/ratings",
+    "components/products/related",
+    "components/products/reviews",
+    "components/products/schema",
+    "components/products/tabs",
+    "components/products/top",
+    "components/products/videos",
+    "components/products/modals/writeReview",
+    "components/products/options/date",
+    "components/products/options/input-file",
+    "components/products/options/input-checkbox",
+    "components/products/options/input-numbers",
+    "components/products/options/input-text",
+    "components/products/options/product-list",
+    "components/products/options/set-radio",
+    "components/products/options/set-select",
+    "components/products/options/set-rectangle",
+    "components/products/options/swatch",
+    "components/products/options/textarea",
+    "pages/blog-post",
+    "pages/brand",
+    "pages/blog",
+    "pages/cart",
+    "pages/brands",
+    "pages/category",
+    "pages/checkout",
+    "pages/compare",
+    "pages/contact-us",
+    "pages/home",
+    "pages/order-confirmation",
+    "pages/page",
+    "pages/product",
+    "pages/search",
+    "pages/sitemap",
+    "pages/subscribed",
+    "pages/unsubscribe",
+    "pages/auth/account-created",
+    "pages/auth/create-account",
+    "pages/auth/forgot-password",
+    "pages/auth/login",
+    "pages/auth/new-password",
+    "pages/gift-certificate/balance",
+    "pages/gift-certificate/redeem",
+    "pages/gift-certificate/purchase",
+    "pages/errors/403",
+    "pages/errors/404",
+    "pages/errors/generic",
+    "pages/unavailable/maintenance",
+    "pages/unavailable/hibernation",
+    "pages/account/add-address",
+    "pages/account/add-payment-method",
+    "pages/account/add-return",
+    "pages/account/addresses",
+    "pages/account/add-wishlist",
+    "pages/account/edit-payment-method",
+    "pages/account/download-item",
+    "pages/account/inbox",
+    "pages/account/payment-methods",
+    "pages/account/return-saved",
+    "pages/account/wishlist-details",
+    "pages/account/recent-items",
+    "pages/account/returns",
+    "pages/account/wishlists",
+    "pages/account/edit",
+    "pages/account/orders/details",
+    "pages/account/orders/invoice",
+    "pages/account/orders/all",
+    "pages/account/orders/completed"
+  ]
+}

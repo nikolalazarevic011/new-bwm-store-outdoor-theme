@@ -1,0 +1,18 @@
+{{#partial "page"}}
+<div class="page">
+    <aside class="page-sidebar">
+        {{> components/epic/sidebar}}
+    </aside>
+
+    <main class="page-content">
+        <h1 class="page-heading">{{lang 'newsletter.unsubscribed_heading'}}</h1>
+        {{> components/common/alert/alert-success (lang 'newsletter.unsubscribed_message' store_name=settings.store_name)}}
+    </main>
+
+    <div class="sidebar-region">
+        {{{region name="epic_sidebar"}}}
+        {{{region name="epic_sidebar--global"}}}
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

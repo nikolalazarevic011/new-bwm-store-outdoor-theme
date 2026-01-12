@@ -1,0 +1,40 @@
+{{#partial "page"}}
+<div class="page">
+    <aside class="page-sidebar">
+        {{> components/epic/sidebar}}
+    </aside>
+
+    <main class="page-content">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+        {{#unless theme_settings.hide_contact_us_page_heading }}
+            <h1 class="page-heading">{{page.title}}</h1>
+        {{/unless}}
+
+        {{#if page.sub_pages}}
+            <nav class="navBar navBar--sub">
+                <ul class="navBar-section account-navigation">
+                    {{#each page.sub_pages}}
+                        <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                    {{/each}}
+                </ul>
+            </nav>
+        {{/if}}
+
+        <div id="contact-us-page">
+            {{#if forms.contact.success}}
+                <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+            {{else}}
+                {{{page.content}}}
+                {{> components/page/contact-us-form}}
+            {{/if}}
+        </div>
+    </main>
+
+    <div class="sidebar-region">
+        {{{region name="epic_sidebar"}}}
+        {{{region name="epic_sidebar--global"}}}
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,76 @@
+{{#if children}}
+    <a class="navList-action has-subMenu{{#if is_active}} activePage{{/if}}"
+        href="{{url}}"
+        title="{{name}}"
+        aria-label="{{name}}"
+        data-collapsible="sidebar-navList-{{#if id}}{{id}}{{else}}{{dashcase name}}{{/if}}"
+    >
+        {{name}}
+        <i class="icon navList-action-moreIcon" aria-hidden="true">
+            <svg><use href="#icon-chevron-right"></use></svg>
+        </i>
+    </a>
+    <div class="navList-subMenu" id="sidebar-navList-{{#if id}}{{id}}{{else}}{{dashcase name}}{{/if}}" aria-hidden="true" tabindex="-1">
+        <ul class="navList-subMenu-list">
+            {{#if theme_settings.show_view_all}}
+                <li class="navList-subMenu-item">
+                    <a class="navList-subMenu-action navList-action"
+                    href="{{url}}"
+                    aria-label="{{lang 'category.view_all.name' category=name}}"
+                    >
+                        {{lang 'category.view_all.name' category=name}}
+                    </a>
+                </li>
+            {{/if}}
+            {{#each children}}
+                <li class="navList-subMenu-item{{#if children}} navList-subMenu-item--has-subMenu{{/if}}">
+                    {{#if children}}
+                        <a class="navList-subMenu-action navList-action has-subMenu{{#if is_active}} activePage{{/if}}"
+                            href="{{url}}"
+                            aria-label="{{name}}"
+                        >
+                            {{name}}
+                            <span class="collapsible-icon-wrapper"
+                                data-collapsible="sidebar-navList-{{id}}"
+                                data-collapsible-disabled-breakpoint="medium"
+                                data-collapsible-disabled-state="open"
+                                data-collapsible-enabled-state="closed"
+                            >
+                                <i class="icon navList-action-moreIcon">
+                                    <svg><use href="#icon-chevron-right" /></svg>
+                                </i>
+                            </span>
+                        </a>
+                        <ul class="navList-childList" id="sidebar-navList-{{id}}">
+                            {{#each children}}
+                                <li class="navList-childList-item">
+                                    <a class="navList-childList-action navList-action{{#if is_active}} activePage{{/if}}"
+                                        href="{{url}}"
+                                        aria-label="{{name}}"
+                                    >
+                                        {{name}}
+                                    </a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{else}}
+                        <a class="navList-subMenu-action navList-action{{#if is_active}} activePage{{/if}}"
+                            href="{{url}}"
+                            aria-label="{{name}}"
+                        >
+                            {{name}}
+                        </a>
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+{{else}}
+    <a class="navList-action{{#if is_active}} activePage{{/if}}"
+        href="{{url}}"
+        title="{{name}}"
+        aria-label="{{name}}"
+    >
+        {{name}}
+    </a>
+{{/if}}

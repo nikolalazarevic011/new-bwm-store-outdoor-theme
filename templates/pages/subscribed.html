@@ -1,0 +1,33 @@
+{{#partial "page"}}
+<div class="page">
+    <aside class="page-sidebar">
+        {{> components/epic/sidebar}}
+    </aside>
+
+    <main class="page-content">
+        <h1 class="page-heading" tabindex="0" role="status" aria-live="assertive">
+            {{#if subscription.error}}
+                {{lang 'newsletter.subscribed_heading_error'}}
+            {{else}}
+                {{lang 'newsletter.subscribed_heading'}}
+            {{/if}}
+        </h1>
+
+        {{#if subscription.error}}
+            {{> components/common/alert/alert-error subscription.error}}
+        {{else}}
+            {{> components/common/alert/alert-success (lang 'newsletter.subscribed_message')}}
+        {{/if}}
+    </main>
+
+    <div class="sidebar-region">
+        {{{region name="epic_sidebar"}}}
+        {{{region name="epic_sidebar--global"}}}
+    </div>
+</div>
+<script>
+    const subscriptionStatusElement = document.querySelector('.page-content > .page-heading');
+    if (subscriptionStatusElement) subscriptionStatusElement.focus();
+</script>
+{{/partial}}
+{{> layout/base}}

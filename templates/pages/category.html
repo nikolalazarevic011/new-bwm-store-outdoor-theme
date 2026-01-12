@@ -1,0 +1,125 @@
+---
+category:
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{{pagination.category.previous}}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{{pagination.category.next}}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+<div class="page">
+    {{#if theme_settings.epic-toggle-category-header-fullwidth}}
+      <div class="page-section--full">
+        {{{region name="category_above_header"}}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        {{#if category.image}}
+            {{> components/common/responsive-img
+                image=category.image
+                fallback_size=theme_settings.zoom_size
+                lazyload=theme_settings.lazyload_mode
+                class="category-header-image"
+            }}
+        {{/if}}
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h1 class="page-heading">{{category.name}}</h1>
+            {{{region name="category_below_header"}}}
+        {{/unless}}
+
+        {{#if (occurrences category.description "|||") '>' 0}}
+            {{#withFirst (split category.description "|||")}}
+                <div class="top-description">{{{this}}}</div>
+            {{/withFirst}}
+        {{else}}
+            {{{category.description}}}
+        {{/if}}
+      </div>
+    {{/if}}
+    {{#if category.faceted_search_enabled}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else if category.subcategories}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else if theme_settings.shop_by_price_visibility}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{/if}}
+
+    <main class="page-content">
+      {{#unless theme_settings.epic-toggle-category-header-fullwidth}}
+        {{{region name="category_above_header"}}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        {{#if category.image}}
+            {{> components/common/responsive-img
+                image=category.image
+                fallback_size=theme_settings.zoom_size
+                lazyload=theme_settings.lazyload_mode
+                class="category-header-image"
+            }}
+        {{/if}}
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h1 class="page-heading">{{category.name}}</h1>
+            {{{region name="category_below_header"}}}
+        {{/unless}}
+
+        {{#if (occurrences category.description "|||") '>' 0}}
+            {{#withFirst (split category.description "|||")}}
+                <div class="top-description">{{{this}}}</div>
+            {{/withFirst}}
+        {{else}}
+            {{{category.description}}}
+        {{/if}}
+      {{/unless}}
+
+      {{#if theme_settings.epic-toggle-category-refine-subcategories}}
+        {{#if category.subcategories}}
+          <div class="subcategoryListing">
+              <p>Refine:</p>
+              <ul class="subcategoryGrid">
+                  {{#each category.subcategories}}
+                  <li class="subcategoryGridSubcat">
+                    <a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+                  </li>
+                  {{/each}}
+              </ul>
+          </div>
+        {{/if}}
+      {{/if}}
+
+        <div class="product-listing-container" id="product-listing-container">
+            {{> components/category/product-listing}}
+        </div>
+
+        {{#if (occurrences category.description "|||") '>' 0}}
+            {{#withLast (split category.description "|||")}}
+                <div class="bottom-description">
+                    <div class="bottom-description-wrp">
+                        {{{this}}}
+                    </div>
+                </div>
+            {{/withLast}}
+        {{/if}}
+    </main>
+
+    <div class="sidebar-region">
+        {{{region name="epic_sidebar"}}}
+        {{{region name="epic_sidebar--global"}}}
+    </div>
+
+    <div class="page-region">
+        {{{region name="category_below_content"}}}
+    </div>
+</div>
+
+{{/partial}}
+{{> layout/base}}
