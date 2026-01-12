@@ -7,6 +7,7 @@ node_modules/
 
 # Build outputs
 assets/dist/
+parsed/
 
 # Logs
 *.log

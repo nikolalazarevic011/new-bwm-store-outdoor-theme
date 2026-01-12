@@ -1,3 +1,0 @@
-{
-  "components/products/price-label": "{{#if label_value '===' ''}}\n    {{fallback}}\n{{else}}\n    {{label_value}}\n{{/if}}\n"
-}
