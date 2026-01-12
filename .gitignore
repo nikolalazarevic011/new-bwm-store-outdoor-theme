@@ -1,5 +1,6 @@
 # Claude Code configuration (keep local only)
 .claude/
+tmpclaude-*
 
 # Node modules
 node_modules/
