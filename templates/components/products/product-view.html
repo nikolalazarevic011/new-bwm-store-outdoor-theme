@@ -247,9 +247,33 @@
                 <div data-product-option-change style="display:none;">
                     {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}}
                     {{#each product.options}}
-                        {{{dynamicComponent 'components/products/options'}}}
+                        {{#unless @first}}
+                            {{{dynamicComponent 'components/products/options'}}}
+                        {{/unless}}
                     {{/each}}
                 </div>
+
+                {{!-- Picklist table container (rendered/controlled by assets/js/theme/common/picklist.js) --}}
+                <div class="picklist" data-picklist-root style="display:none;" data-picklist-api-base="https://newbold.kensiumcommerce.com">
+                    <div class="picklist-loading" data-picklist-loading style="display:none;">Loading options…</div>
+                    <div class="picklist-error" data-picklist-error style="display:none;"></div>
+
+                    <table class="picklistTable" data-picklist-table style="display:none;">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody data-picklist-tbody></tbody>
+                    </table>
+
+                    <div class="picklist-actions">
+                        <button type="button" class="button button--primary" data-picklist-add>Add Selected to Cart</button>
+                    </div>
+                </div>
+
                 <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
                     <label class="form-label form-label--alternate">
                         {{lang 'products.current_stock'}}
