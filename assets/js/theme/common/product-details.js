@@ -12,6 +12,7 @@ import { normalizeFormData } from './utils/api';
 import { isBrowserIE, convertIntoArray } from './utils/ie-helpers';
 import bannerUtils from './utils/banner-utils';
 import currencySelector from '../global/currency-selector';
+import Picklist from './picklist';
 
 export default class ProductDetails extends ProductDetailsBase {
     constructor($scope, context, productAttributesData = {}) {
@@ -28,6 +29,12 @@ export default class ProductDetails extends ProductDetailsBase {
         this.updateDateSelector();
 
         const $form = $('form[data-cart-item-add]', $scope);
+        const parentProductId = Number($form.find('[name="product_id"]').val());
+
+        console.groupCollapsed('[PDP] ProductDetails init');
+        console.log('9999product_id:', parentProductId);
+        console.log('scope:', $scope && $scope[0]);
+        console.groupEnd();
 
         if ($form[0].checkValidity()) {
             this.updateProductDetailsData();
@@ -107,6 +114,17 @@ export default class ProductDetails extends ProductDetailsBase {
         $productOptionsElement.show();
 
         this.previewModal = modalFactory('#previewModal')[0];
+
+        // Picklist table (if enabled via template markup)
+        this.picklist = new Picklist({
+            $scope: this.$scope,
+            context: this.context,
+            $overlay: this.$overlay,
+            previewModal: this.previewModal,
+            updateCartContent: (modal, cartItemId, onComplete) => this.updateCartContent(modal, cartItemId, onComplete),
+            productId: parentProductId,
+        });
+        this.picklist.init();
     }
 
     registerAddToCartValidation() {

@@ -1,1 +1,105 @@
+// =============================================================================
+// Custom theme overrides
+// =============================================================================
+//
+// Picklist table (PDP) - rendered by assets/js/theme/common/picklist.js
+//
 
+.picklist {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    background: #fff;
+}
+
+.picklist-loading {
+    font-size: 0.95rem;
+}
+
+.picklist-error {
+    display: none;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(176, 0, 32, 0.35);
+    background: rgba(176, 0, 32, 0.06);
+    color: #b00020;
+    border-radius: 4px;
+}
+
+.picklistTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+
+    thead th {
+        text-align: left;
+        font-weight: 600;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+        white-space: nowrap;
+    }
+
+    tbody td {
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        vertical-align: top;
+    }
+}
+
+.picklistTable-price {
+    white-space: nowrap;
+}
+
+.picklistTable-qty {
+    width: 1%;
+    white-space: nowrap;
+
+    .form-increment {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+
+        .button--icon {
+            min-width: 2.25rem;
+            height: 2.25rem;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .form-input--incrementTotal {
+            width: 3.5rem;
+            text-align: center;
+        }
+    }
+}
+
+.picklistTable-oos {
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.picklist-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.picklistTable tbody td{
+    vertical-align: top;
+}
+@media (max-width: 550px) {
+    .picklistTable {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .picklist-actions {
+        justify-content: stretch;
+
+        .button {
+            width: 100%;
+        }
+    }
+}
