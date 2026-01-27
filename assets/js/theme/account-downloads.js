@@ -12,7 +12,7 @@ export default class AccountDownloads extends PageManager {
         this.$pagination = $('[data-downloads-pagination]');
 
         this.currentPage = 1;
-        this.perPage = 5; 
+        this.perPage = 5;
         this.totalOrders = 0;
         this.customerEmail = this.context.customerEmail || '';
 
@@ -49,8 +49,59 @@ export default class AccountDownloads extends PageManager {
 
         console.log('[AccountDownloads] Container found - initializing downloads list');
 
+        // Update breadcrumbs to show "Downloads" instead of "Your Orders" when on downloads page
+        this.updateBreadcrumbsForDownloads();
+
         // Initialize the downloads list
         this.initDownloadsList();
+    }
+
+    /**
+     * Update breadcrumbs to show "Downloads" instead of "Your Orders" for downloads page
+     */
+    updateBreadcrumbsForDownloads() {
+        console.log('[AccountDownloads] Updating breadcrumbs for downloads page');
+
+        // Wait for breadcrumbs to be rendered
+        setTimeout(() => {
+            const $breadcrumbs = $('.breadcrumbs');
+            if ($breadcrumbs.length) {
+                console.log('[AccountDownloads] Found breadcrumbs element');
+
+                // Find the last breadcrumb (should be "Your Orders") and change it to "Downloads"
+                const $lastBreadcrumb = $breadcrumbs.find('.breadcrumb.is-active');
+                if ($lastBreadcrumb.length) {
+                    const currentText = $lastBreadcrumb.find('span').text().trim();
+                    console.log('[AccountDownloads] Current last breadcrumb text:', currentText);
+
+                    // Only update if it's showing orders-related text
+                    if (currentText.includes('Order') || currentText.includes('Orders')) {
+                        $lastBreadcrumb.find('span').text('Downloads');
+                        console.log('[AccountDownloads] Updated breadcrumb text to "Downloads"');
+                    }
+                }
+
+                // Also update the JSON-LD breadcrumb data for SEO
+                const $jsonLd = $('script[type="application/ld+json"]');
+                if ($jsonLd.length) {
+                    try {
+                        const breadcrumbData = JSON.parse($jsonLd.html());
+                        if (breadcrumbData.itemListElement && breadcrumbData.itemListElement.length > 0) {
+                            const lastItem = breadcrumbData.itemListElement[breadcrumbData.itemListElement.length - 1];
+                            if (lastItem.item && (lastItem.item.name.includes('Order') || lastItem.item.name.includes('Orders'))) {
+                                lastItem.item.name = 'Downloads';
+                                $jsonLd.html(JSON.stringify(breadcrumbData));
+                                console.log('[AccountDownloads] Updated JSON-LD breadcrumb data');
+                            }
+                        }
+                    } catch (error) {
+                        console.error('[AccountDownloads] Error updating JSON-LD breadcrumb data:', error);
+                    }
+                }
+            } else {
+                console.log('[AccountDownloads] No breadcrumbs found - may not be rendered yet');
+            }
+        }, 500); // Small delay to ensure breadcrumbs are rendered
     }
 
     static load(context) {
@@ -312,18 +363,22 @@ export default class AccountDownloads extends PageManager {
         orders.forEach(order => {
             if (order.download_links && order.download_links.length > 0) {
                 order.download_links.forEach((link, index) => {
+                    // Construct full download URL using BASE_URL from API config
+                    const baseUrl = API_CONFIG.BASE_URL.replace(/\/$/, '');
+                    const downloadUrl = `${baseUrl}${link.download_link}`;
+
                     html += `
                         <tr class="downloads-table-row">
                             <td class="downloads-table-cell">
-                                #${order.order_number}
+                                <a href="${downloadUrl}" target="_blank" class="download-link">
+                                    #${order.order_number}
+                                </a>
                             </td>
                             <td class="downloads-table-cell">
                                 ${this.formatDate(order.date_created)}
                             </td>
                             <td class="downloads-table-cell">
-                                <a href="${link.url}" target="_blank" class="download-link">
-                                    ${link.product_title}
-                                </a>
+                                ${link.product_title}
                             </td>
                         </tr>
                     `;
@@ -352,17 +407,7 @@ export default class AccountDownloads extends PageManager {
         const totalPages = Math.ceil(this.totalOrders / this.perPage);
         console.log('[AccountDownloads] Calculated total pages:', totalPages);
 
-        // Always show pagination for testing/navigation purposes
-        const displayTotalPages = Math.max(2, totalPages);
-
         let html = '<div class="pagination">';
-
-        // Show page info: "Showing X-Y of Z orders"
-        const startRecord = ((this.currentPage - 1) * this.perPage) + 1;
-        const endRecord = Math.min(this.currentPage * this.perPage, this.totalOrders);
-        html += `<div class="pagination-info">Showing ${startRecord}-${endRecord} of ${this.totalOrders} downloads</div>`;
-
-        console.log('[AccountDownloads] Pagination info text:', `Showing ${startRecord}-${endRecord} of ${this.totalOrders} downloads`);
 
         // Previous button - disabled on first page, enabled otherwise
         if (this.currentPage > 1) {
@@ -380,32 +425,6 @@ export default class AccountDownloads extends PageManager {
             `;
         }
 
-        // Page numbers - show navigation for available pages
-        const startPage = Math.max(1, this.currentPage - 2);
-        const endPage = Math.min(displayTotalPages, this.currentPage + 2);
-
-        if (startPage > 1) {
-            html += `<a href="#" class="pagination-item" data-page="1">1</a>`;
-            if (startPage > 2) {
-                html += `<span class="pagination-item pagination-item--ellipsis">...</span>`;
-            }
-        }
-
-        for (let i = startPage; i <= endPage; i++) {
-            if (i === this.currentPage) {
-                html += `<span class="pagination-item pagination-item--current">${i}</span>`;
-            } else {
-                html += `<a href="#" class="pagination-item" data-page="${i}">${i}</a>`;
-            }
-        }
-
-        if (endPage < displayTotalPages) {
-            if (endPage < displayTotalPages - 1) {
-                html += `<span class="pagination-item pagination-item--ellipsis">...</span>`;
-            }
-            html += `<a href="#" class="pagination-item" data-page="${displayTotalPages}">${displayTotalPages}</a>`;
-        }
-
         // Next button - always enabled for testing/navigation purposes
         html += `
             <a href="#" class="pagination-item pagination-item--next" data-page="${this.currentPage + 1}">
@@ -415,7 +434,7 @@ export default class AccountDownloads extends PageManager {
 
         html += '</div>';
 
-        console.log('[AccountDownloads] Generated pagination HTML:', html);
+        console.log('[AccountDownloads] Generated simplified pagination HTML:', html);
 
         this.$pagination.html(html).show();
 
