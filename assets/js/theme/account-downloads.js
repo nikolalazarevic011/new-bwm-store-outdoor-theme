@@ -12,7 +12,7 @@ export default class AccountDownloads extends PageManager {
         this.$pagination = $('[data-downloads-pagination]');
 
         this.currentPage = 1;
-        this.perPage = 10;
+        this.perPage = 5; 
         this.totalOrders = 0;
         this.customerEmail = this.context.customerEmail || '';
 
@@ -130,9 +130,11 @@ export default class AccountDownloads extends PageManager {
     }
 
     showContent() {
+        console.log('[AccountDownloads] showContent called - showing downloads list');
         this.$loading.hide();
         this.$error.hide();
         this.$list.show();
+        console.log('[AccountDownloads] Downloads list shown successfully');
     }
 
     async fetchDownloads(page, perPage) {
@@ -211,13 +213,55 @@ export default class AccountDownloads extends PageManager {
                 throw new Error(data.message || 'Failed to fetch downloads');
             }
 
-            // Store pagination info
-            this.currentPage = data.pagination.current_page;
-            this.perPage = data.pagination.per_page;
-            this.totalOrders = data.orders_count;
+            // Check if we have any orders with download links
+            const ordersWithLinks = data.orders_with_links || [];
+            const hasDownloadableOrders = ordersWithLinks.some(order =>
+                order.download_links && order.download_links.length > 0
+            );
+
+            // If no downloadable orders found on this page, show "no more records" message
+            if (!hasDownloadableOrders && page > 1) {
+                console.log('[AccountDownloads] No more downloadable records found');
+                this.$list.html(`
+                    <div class="alertBox alertBox--info">
+                        No more downloadable records available.
+                    </div>
+                `);
+                this.$loading.hide(); // Hide loading spinner
+
+                // Show pagination with only Previous button enabled
+                this.renderNoMoreRecordsPagination();
+                return;
+            }
+
+            // Store pagination info - handle different API response formats
+            this.currentPage = data.pagination?.current_page || data.pagination?.page || page;
+            this.perPage = data.pagination?.per_page || data.pagination?.limit || perPage;
+
+            // Handle different field names for total orders count
+            let totalOrders = data.orders_count || data.total_orders || data.total_records || 0;
+
+            // If we have orders_with_links array, use its length as fallback
+            if (data.orders_with_links && data.orders_with_links.length > 0) {
+                totalOrders = data.orders_with_links.length;
+            }
+
+            // If pagination has total_orders_checked, use that
+            if (data.pagination?.total_orders_checked) {
+                totalOrders = data.pagination.total_orders_checked;
+            }
+
+            this.totalOrders = totalOrders;
+
+            console.log('[AccountDownloads] Pagination info:', {
+                currentPage: this.currentPage,
+                perPage: this.perPage,
+                totalOrders: this.totalOrders,
+                totalPages: Math.ceil(this.totalOrders / this.perPage)
+            });
 
             // Render downloads
-            this.renderDownloads(data.orders_with_links);
+            this.renderDownloads(ordersWithLinks);
 
             // Render pagination
             this.renderPagination();
@@ -251,16 +295,15 @@ export default class AccountDownloads extends PageManager {
             return;
         }
 
-        // Create table structure as requested
+        // Create table structure as requested (without RemainingDownloads column)
         let html = `
             <div class="downloads-table-container">
                 <table class="downloads-table">
                     <thead>
                         <tr>
-                            <th>${this.context.lang('account.downloads.order_number')}</th>
-                            <th>${this.context.lang('common.date')}</th>
-                            <th>${this.context.lang('account.downloads.product_name')}</th>
-                            <th>${this.context.lang('account.downloads.remaining_downloads')}</th>
+                            <th>Order#</th>
+                            <th>Creation Date</th>
+                            <th>Product Name</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -272,7 +315,7 @@ export default class AccountDownloads extends PageManager {
                     html += `
                         <tr class="downloads-table-row">
                             <td class="downloads-table-cell">
-                                ${index === 0 ? `#${order.order_number}` : ''}
+                                #${order.order_number}
                             </td>
                             <td class="downloads-table-cell">
                                 ${this.formatDate(order.date_created)}
@@ -281,9 +324,6 @@ export default class AccountDownloads extends PageManager {
                                 <a href="${link.url}" target="_blank" class="download-link">
                                     ${link.product_title}
                                 </a>
-                            </td>
-                            <td class="downloads-table-cell">
-                                ${this.context.lang('account.downloads.unlimited')}
                             </td>
                         </tr>
                     `;
@@ -302,26 +342,47 @@ export default class AccountDownloads extends PageManager {
     }
 
     renderPagination() {
-        if (this.totalOrders <= this.perPage) {
-            this.$pagination.hide();
-            return;
-        }
+        console.log('[AccountDownloads] renderPagination called with:', {
+            currentPage: this.currentPage,
+            perPage: this.perPage,
+            totalOrders: this.totalOrders
+        });
 
+        // Calculate total pages based on actual data
         const totalPages = Math.ceil(this.totalOrders / this.perPage);
+        console.log('[AccountDownloads] Calculated total pages:', totalPages);
+
+        // Always show pagination for testing/navigation purposes
+        const displayTotalPages = Math.max(2, totalPages);
+
         let html = '<div class="pagination">';
 
-        // Previous button
+        // Show page info: "Showing X-Y of Z orders"
+        const startRecord = ((this.currentPage - 1) * this.perPage) + 1;
+        const endRecord = Math.min(this.currentPage * this.perPage, this.totalOrders);
+        html += `<div class="pagination-info">Showing ${startRecord}-${endRecord} of ${this.totalOrders} downloads</div>`;
+
+        console.log('[AccountDownloads] Pagination info text:', `Showing ${startRecord}-${endRecord} of ${this.totalOrders} downloads`);
+
+        // Previous button - disabled on first page, enabled otherwise
         if (this.currentPage > 1) {
             html += `
                 <a href="#" class="pagination-item pagination-item--previous" data-page="${this.currentPage - 1}">
-                    ${this.context.lang('common.previous')}
+                    Previous
                 </a>
+            `;
+        } else {
+            // Show disabled previous button on first page
+            html += `
+                <span class="pagination-item pagination-item--previous pagination-item--disabled" aria-disabled="true">
+                    Previous
+                </span>
             `;
         }
 
-        // Page numbers
+        // Page numbers - show navigation for available pages
         const startPage = Math.max(1, this.currentPage - 2);
-        const endPage = Math.min(totalPages, this.currentPage + 2);
+        const endPage = Math.min(displayTotalPages, this.currentPage + 2);
 
         if (startPage > 1) {
             html += `<a href="#" class="pagination-item" data-page="1">1</a>`;
@@ -338,25 +399,27 @@ export default class AccountDownloads extends PageManager {
             }
         }
 
-        if (endPage < totalPages) {
-            if (endPage < totalPages - 1) {
+        if (endPage < displayTotalPages) {
+            if (endPage < displayTotalPages - 1) {
                 html += `<span class="pagination-item pagination-item--ellipsis">...</span>`;
             }
-            html += `<a href="#" class="pagination-item" data-page="${totalPages}">${totalPages}</a>`;
+            html += `<a href="#" class="pagination-item" data-page="${displayTotalPages}">${displayTotalPages}</a>`;
         }
 
-        // Next button
-        if (this.currentPage < totalPages) {
-            html += `
-                <a href="#" class="pagination-item pagination-item--next" data-page="${this.currentPage + 1}">
-                    ${this.context.lang('common.next')}
-                </a>
-            `;
-        }
+        // Next button - always enabled for testing/navigation purposes
+        html += `
+            <a href="#" class="pagination-item pagination-item--next" data-page="${this.currentPage + 1}">
+                Next
+            </a>
+        `;
 
         html += '</div>';
 
+        console.log('[AccountDownloads] Generated pagination HTML:', html);
+
         this.$pagination.html(html).show();
+
+        console.log('[AccountDownloads] Pagination container shown');
 
         // Bind pagination events
         this.$pagination.off('click', '.pagination-item').on('click', '.pagination-item', (e) => {
@@ -364,10 +427,17 @@ export default class AccountDownloads extends PageManager {
             const $target = $(e.currentTarget);
             const page = parseInt($target.data('page'));
 
+            console.log('[AccountDownloads] Pagination click event triggered for page:', page);
+
             if (page && page !== this.currentPage) {
+                console.log(`[AccountDownloads] Page change: ${this.currentPage} -> ${page}`);
                 this.onPageChange(page);
+            } else {
+                console.log('[AccountDownloads] Clicked same page or invalid page number');
             }
         });
+
+        console.log('[AccountDownloads] Pagination events bound successfully');
     }
 
     onPageChange(page) {
@@ -397,13 +467,52 @@ export default class AccountDownloads extends PageManager {
             return date.toLocaleString(this.context.html_lang || 'en-US', {
                 year: 'numeric',
                 month: 'short',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
+                day: 'numeric'
             });
         } catch (error) {
             console.error('Error formatting date:', error);
             return dateString;
         }
+    }
+
+    /**
+     * Render pagination controls when no more records are available
+     * Shows only the Previous button to allow navigation back
+     */
+    renderNoMoreRecordsPagination() {
+        console.log('[AccountDownloads] renderNoMoreRecordsPagination called');
+
+        let html = '<div class="pagination">';
+
+        // Show Previous button (enabled since we're not on page 1)
+        html += `
+            <a href="#" class="pagination-item pagination-item--previous" data-page="${this.currentPage - 1}">
+                Previous
+            </a>
+        `;
+
+        html += '</div>';
+
+        console.log('[AccountDownloads] Generated no-more-records pagination HTML:', html);
+
+        this.$pagination.html(html).show();
+
+        // Bind pagination events
+        this.$pagination.off('click', '.pagination-item').on('click', '.pagination-item', (e) => {
+            e.preventDefault();
+            const $target = $(e.currentTarget);
+            const page = parseInt($target.data('page'));
+
+            console.log('[AccountDownloads] No-more-records pagination click event triggered for page:', page);
+
+            if (page && page !== this.currentPage) {
+                console.log(`[AccountDownloads] Page change: ${this.currentPage} -> ${page}`);
+                this.onPageChange(page);
+            } else {
+                console.log('[AccountDownloads] Clicked same page or invalid page number');
+            }
+        });
+
+        console.log('[AccountDownloads] No-more-records pagination events bound successfully');
     }
 }

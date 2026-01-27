@@ -202,9 +202,10 @@
     transition: all 0.2s ease;
     font-size: 0.9rem;
 
-    &:hover:not(.pagination-item--current):not(.pagination-item--ellipsis) {
+    &:hover:not(.pagination-item--current):not(.pagination-item--ellipsis):not(.pagination-item--disabled) {
         background: #f5f5f5;
         border-color: #ccc;
+        cursor: pointer;
     }
 
     &--current {
@@ -220,10 +221,27 @@
         color: #999;
     }
 
+    &--disabled {
+        background: #f5f5f5;
+        color: #999;
+        border-color: #ddd;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
     &--previous,
     &--next {
         font-weight: 600;
     }
+}
+
+.pagination-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
