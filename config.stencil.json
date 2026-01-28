@@ -1,0 +1,11 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  },
+  "normalStoreUrl": "https://bwm.mybigcommerce.com/",
+  "port": "4534",
+  "packageManager": "npm"
+}
