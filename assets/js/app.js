@@ -15,6 +15,7 @@ const pageClasses = {
     'add-wishlist': () => import('./theme/wishlist'),
     account_recentitems: getAccount,
     account_downloaditem: getAccount,
+    account_downloads: () => import('./theme/account-downloads'),
     editaccount: getAccount,
     account_inbox: getAccount,
     account_saved_return: getAccount,
@@ -92,6 +93,22 @@ window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null
                         imported.default.load(context);
                     });
                 });
+
+                // Add fallback initialization for downloads page
+                setTimeout(() => {
+                    if (typeof AccountDownloads !== 'undefined') {
+                        AccountDownloads.initFallback();
+                    } else {
+                        // Try to import and initialize if not already loaded
+                        import('./theme/account-downloads').then(module => {
+                            if (module.default) {
+                                module.default.initFallback();
+                            }
+                        }).catch(error => {
+                            console.error('[AccountDownloads] Fallback import failed:', error);
+                        });
+                    }
+                }, 1000);
             });
         },
     };

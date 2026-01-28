@@ -295,6 +295,20 @@
     },
     "account": {
         "breadcrumb": "Your Account",
+        "downloads": {
+            "heading": "My Downloads",
+            "no_downloads": "You don't have any downloadable products yet.",
+            "order_number": "Order #",
+            "product_name": "Product Name",
+            "download_link": "Download",
+            "date_created": "Date: {date}",
+            "file_size": "Size: {size}",
+            "expired": "Expired",
+            "days_remaining": "{number, plural, one {1 day} other {# days}} remaining",
+            "downloads_remaining": "{number, plural, one {1 download} other {# downloads}} remaining",
+            "remaining_downloads": "Remaining Downloads",
+            "unlimited": "Unlimited"
+        },
         "nav": {
             "overview": "Overview",
             "orders": "Orders",
@@ -304,7 +318,8 @@
             "recently_viewed": "Recently Viewed",
             "settings": "Account Settings",
             "addresses": "Addresses",
-            "payment_methods": "Payment Methods"
+            "payment_methods": "Payment Methods",
+            "downloads": "Downloads"
         },
         "mobile_nav": {
             "messages": "Messages",
@@ -391,7 +406,7 @@
                 "days_or_downloads": "or {number} downloads",
                 "remaining": "remaining"
             }
-        },
+    },
         "payment_methods": {
             "heading": "Payment Methods",
             "payment_method": "Payment method",

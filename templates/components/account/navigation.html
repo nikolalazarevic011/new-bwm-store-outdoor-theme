@@ -30,6 +30,9 @@
         <li class="navBar-item {{#if account_page '===' 'settings'}}is-active{{/if}}">
             <a class="navBar-action" href="{{urls.account.details}}">{{lang 'account.nav.settings'}}</a>
         </li>
+        <li class="navBar-item {{#if account_page '===' 'downloads'}}is-active{{/if}}">
+            <a class="navBar-action" href="{{urls.account.orders.all}}&show=downloads">{{lang 'account.nav.downloads'}}</a>
+        </li>
         <li class="navBar-item">
             <a class="navBar-action" href="{{urls.auth.logout}}" aria-label="{{lang 'common.logout'}}">{{lang 'common.logout'}}</a>
         </li>
