@@ -406,7 +406,7 @@
                 "days_or_downloads": "or {number} downloads",
                 "remaining": "remaining"
             }
-        },
+    },
         "payment_methods": {
             "heading": "Payment Methods",
             "payment_method": "Payment method",
