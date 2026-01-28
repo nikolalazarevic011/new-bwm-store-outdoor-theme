@@ -11,6 +11,9 @@ customer:
 {{> components/account/navigation account_page='orders'}}
 
 <main class="account account--fixed">
+    <!-- Hidden field with customer data for JavaScript access -->
+    <input type="hidden" id="customer-id-field" value="{{customer.id}}" data-customer-email="{{customer.email}}">
+
     <div class="account-head">
         {{#if customer.store_credit.value '>' 0}}
             <div class="alertBox alertBox--storeCredit">
@@ -27,6 +30,26 @@ customer:
                 {{> components/common/alert/alert-info (lang 'account.orders.none')}}
             {{/if}}
         </section>
+
+        <!-- Downloads Container - Hidden by default, shown when show=downloads parameter is present -->
+        <div class="account-downloads-container" data-downloads-container style="display: none;">
+            <div class="loadingOverlay" data-downloads-loading style="display: none;">
+                <div class="loadingOverlay-content">
+                    <div class="loadingIndicator"></div>
+                    <p>{{lang 'common.loading'}}</p>
+                </div>
+            </div>
+
+            <div class="alertBox alertBox--error" data-downloads-error style="display: none;"></div>
+
+            <div class="downloads-list" data-downloads-list>
+                <!-- Downloads will be rendered here by JavaScript -->
+            </div>
+
+            <div class="downloads-pagination" data-downloads-pagination style="display: none;">
+                <!-- Pagination will be rendered here by JavaScript -->
+            </div>
+        </div>
     </div>
 </main>
 

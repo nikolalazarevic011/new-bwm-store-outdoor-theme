@@ -1,0 +1,40 @@
+---
+pagination:
+    orders:
+        current_page: 1
+        per_page: 10
+---
+
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<h1 class="page-heading">{{lang 'account.downloads.heading'}}</h1>
+{{> components/account/navigation account_page='downloads'}}
+
+<main class="account account--fixed">
+    <div class="account-body">
+        <section class="account-content">
+            <div class="account-downloads-container" data-downloads-container>
+                <div class="loadingOverlay" data-downloads-loading style="display: none;">
+                    <div class="loadingOverlay-content">
+                        <div class="loadingIndicator"></div>
+                        <p>{{lang 'common.loading'}}</p>
+                    </div>
+                </div>
+
+                <div class="alertBox alertBox--error" data-downloads-error style="display: none;"></div>
+
+                <div class="downloads-list" data-downloads-list>
+                    <!-- Downloads will be rendered here by JavaScript -->
+                </div>
+
+                <div class="downloads-pagination" data-downloads-pagination style="display: none;">
+                    <!-- Pagination will be rendered here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+{{/partial}}
+{{> layout/base}}
