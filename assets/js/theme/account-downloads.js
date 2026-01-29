@@ -471,6 +471,9 @@ export default class AccountDownloads extends PageManager {
         // Create table structure as requested (without RemainingDownloads column)
         let html = `
             <div class="downloads-table-container">
+                <p class="downloads-instructions" style="margin-bottom: 15px; padding: 12px 15px; background-color: #f5f5f5; border-left: 4px solid #333; font-size: 14px;">
+                    <strong>How to download:</strong> Click on the <strong>Order#</strong> or <strong>Product Name</strong> to start your download.
+                </p>
                 <table class="downloads-table">
                     <thead>
                         <tr>
@@ -554,7 +557,9 @@ export default class AccountDownloads extends PageManager {
                                 ${this.formatDate(order.date_created)}
                             </td>
                             <td class="downloads-table-cell">
-                                ${link.product_title}
+                                <a href="${downloadUrl}" target="_blank" class="download-link">
+                                    ${link.product_title}
+                                </a>
                             </td>
                         </tr>
                     `;
