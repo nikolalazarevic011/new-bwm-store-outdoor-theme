@@ -332,6 +332,8 @@
 
 .header {
     .container {
-        margin-top: 0;
+        margin-top: 0; /* Keeps the gap closed */
+        padding-top: 15px; /* Adds internal space on top */
+        padding-bottom: 15px; /* Adds equal internal space on bottom */
     }
 }
