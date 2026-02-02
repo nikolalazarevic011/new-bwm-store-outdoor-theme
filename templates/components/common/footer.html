@@ -1,231 +1,271 @@
 {{#if banners.bottom}}
-    <div class="banners" data-banner-location="bottom">
-        {{#each (limit banners.bottom_metadata 1)}}
-            <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
-                <div data-event-type="promotion-click">
-                    {{{this.content}}}
-                </div>
-            </div>
-        {{/each}}
+<div class="banners" data-banner-location="bottom">
+    {{#each (limit banners.bottom_metadata 1)}}
+    <div
+        class="banner"
+        data-event-type="promotion"
+        data-entity-id="{{this.id}}"
+        data-name="{{this.banner-name}}"
+        data-position="{{this.location}}"
+        data-name="{{this.banner-name}}"
+    >
+        <div data-event-type="promotion-click">{{{this.content}}}</div>
     </div>
+    {{/each}}
+</div>
 {{/if}}
 <div class="container">{{{region name="page_bottom"}}}</div>
 <div class="container">{{{region name="newsletter_above--global"}}}</div>
-{{#all settings.show_newsletter_box theme_settings.epic-toggle-newsletter (if theme_settings.epic-newsletter-location '===' 'inline')}}
-    <div class="newsletter">
-        <div class="container">
-            {{#if theme_settings.epic-toggle-newsletter}}
-                {{#if theme_settings.epic-toggle-newsletter-widgets}}
-                    {{{region name="newsletter--global"}}}
-                {{else if settings.show_newsletter_box}}
-                    <div class="newsletter-box">
-                        {{> components/common/subscription-form}}
-                    </div>
-                {{/if}}
-            {{else if settings.show_newsletter_box}}
-                <div class="newsletter-box">
-                    {{> components/common/subscription-form}}
-                </div>
-            {{/if}}
+{{#all settings.show_newsletter_box theme_settings.epic-toggle-newsletter (if
+theme_settings.epic-newsletter-location '===' 'inline')}}
+<div class="newsletter">
+    <div class="container">
+        {{#if theme_settings.epic-toggle-newsletter}} {{#if
+        theme_settings.epic-toggle-newsletter-widgets}} {{{region
+        name="newsletter--global"}}} {{else if settings.show_newsletter_box}}
+        <div class="newsletter-box">
+            {{> components/common/subscription-form}}
         </div>
+        {{/if}} {{else if settings.show_newsletter_box}}
+        <div class="newsletter-box">
+            {{> components/common/subscription-form}}
+        </div>
+        {{/if}}
     </div>
+</div>
 {{/all}}
 <div class="container">{{{region name="footer_above--global"}}}</div>
 <footer class="footer" role="contentinfo">
     <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
     <div class="container">
-        <section class="footer-info footer-info-cols--{{theme_settings.epic-footer-number-of-columns}}">
+        <section
+            class="footer-info footer-info-cols--{{theme_settings.epic-footer-number-of-columns}}"
+        >
             {{#gte theme_settings.epic-footer-number-of-columns 1}}
-                <article class="footer-info-col footer-info-col--small">
-                    <h3 class="footer-info-heading">{{theme_settings.epic-footer-heading-column-one}}</h3>
-                    {{#unless theme_settings.epic-toggle-footer-widgets}}
-                        {{#if theme_settings.epic-show-footer-tagline}}
-                            <p>{{theme_settings.epic-footer-tagline}}</p>
-                        {{/if}}
-                        {{#if settings.address}}
-                            <address>{{nl2br settings.address}}</address>
-                        {{/if}}
-                        {{#if settings.phone_number}}
-                            <a href="tel:{{settings.phone_number}}">{{settings.phone_number}}</a>
-                        {{/if}}
-                    {{/unless}}
-                    {{{region name="footer_column_one--global"}}}
-                    {{#if theme_settings.social_icon_placement_top}}
-                      {{#and (if theme_settings.social_icon_placement_bottom '!==' 'bottom_none') (if theme_settings.social_icon_placement_bottom '==' 'bottom_left')}}
-                          {{> components/common/social-links}}
-                      {{/and}}
-                    {{/if}}
-                </article>
-            {{/gte}}
-
-            {{#gte theme_settings.epic-footer-number-of-columns 2}}
-                <article class="footer-info-col footer-info-col--small">
-                    <h3 class="footer-info-heading">{{theme_settings.epic-footer-heading-column-two}}</h3>
-                    {{#unless theme_settings.epic-toggle-footer-widgets}}
-                        <ul class="footer-info-list">
-                            {{#each categories}}
-                                <li>
-                                    <a href="{{url}}">{{name}}</a>
-                                </li>
-                            {{/each}}
-                        </ul>
-                    {{/unless}}
-                    {{{region name="footer_column_two--global"}}}
-                </article>
-            {{/gte}}
-
-            {{#gte theme_settings.epic-footer-number-of-columns 3}}
-                <article class="footer-info-col footer-info-col--small">
-                    <h3 class="footer-info-heading">{{theme_settings.epic-footer-heading-column-three}}</h3>
-                    {{#unless theme_settings.epic-toggle-footer-widgets}}
-                        <ul class="footer-info-list">
-                            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
-                                {{#each shop_by_brand}}
-                                    <li>
-                                        <a href="{{url}}">{{name}}</a>
-                                    </li>
-                                {{/each}}
-                                <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
-                            {{else}}
-                                {{#each pages}}
-                                    <li>
-                                        <a href="{{url}}">{{name}}</a>
-                                    </li>
-                                {{/each}}
-                                <li>
-                                    <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                                </li>
-                            {{/and}}
-                        </ul>
-                    {{/unless}}
-                    {{{region name="footer_column_three--global"}}}
-                </article>
-            {{/gte}}
-
-            {{#gte theme_settings.epic-footer-number-of-columns 4}}
-                <article class="footer-info-col footer-info-col--small">
-                    <h3 class="footer-info-heading">{{theme_settings.epic-footer-heading-column-four}}</h3>
-                    {{#unless theme_settings.epic-toggle-footer-widgets}}
-                        <ul class="footer-info-list">
-                            {{#each pages}}
-                                <li>
-                                    <a href="{{url}}">{{name}}</a>
-                                </li>
-                            {{/each}}
-                            <li>
-                                <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                            </li>
-                        </ul>
-                    {{/unless}}
-                    {{{region name="footer_column_four--global"}}}
-                </article>
-            {{/gte}}
-
-            {{#gte theme_settings.epic-footer-number-of-columns 5}}
-                <article class="footer-info-col footer-info-col--small">
-                    <h3 class="footer-info-heading">{{theme_settings.epic-footer-heading-column-five}}</h3>
-                    {{#all settings.show_newsletter_box theme_settings.epic-toggle-newsletter (if theme_settings.epic-newsletter-location '===' 'column')}}
-                        {{#if theme_settings.epic-toggle-newsletter}}
-                            {{#if theme_settings.epic-toggle-newsletter-widgets}}
-                                {{{region name="newsletter--column"}}}
-                            {{else if settings.show_newsletter_box}}
-                                <div class="newsletter-column">
-                                    {{> components/common/subscription-form location='column'}}
-                                </div>
-                            {{/if}}
-                        {{else if settings.show_newsletter_box}}
-                            <div class="newsletter-column">
-                                {{> components/common/subscription-form}}
-                            </div>
-                        {{/if}}
-                    {{else}}
-                        {{#unless theme_settings.epic-toggle-footer-widgets}}
-                            <ul class="footer-info-list">
-                                {{#each pages}}
-                                    <li>
-                                        <a href="{{url}}">{{name}}</a>
-                                    </li>
-                                {{/each}}
-                                <li>
-                                    <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
-                                </li>
-                            </ul>
-                        {{/unless}}
-                        {{{region name="footer_column_five--global"}}}
-                    {{/all}}
-                </article>
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">
+                    {{theme_settings.epic-footer-heading-column-one}}
+                </h3>
+                {{#unless theme_settings.epic-toggle-footer-widgets}} {{#if
+                theme_settings.epic-show-footer-tagline}}
+                <p>{{theme_settings.epic-footer-tagline}}</p>
+                {{/if}} {{#if settings.address}}
+                <address>{{nl2br settings.address}}</address>
+                {{/if}} {{#if settings.phone_number}}
+                <a href="tel:{{settings.phone_number}}"
+                    >{{settings.phone_number}}</a
+                >
+                {{/if}} {{/unless}} {{{region
+                name="footer_column_one--global"}}} {{#if
+                theme_settings.social_icon_placement_top}} {{#and (if
+                theme_settings.social_icon_placement_bottom '!==' 'bottom_none')
+                (if theme_settings.social_icon_placement_bottom '=='
+                'bottom_left')}} {{> components/common/social-links}} {{/and}}
+                {{/if}}
+            </article>
+            {{/gte}} {{#gte theme_settings.epic-footer-number-of-columns 2}}
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">
+                    {{theme_settings.epic-footer-heading-column-two}}
+                </h3>
+                {{#unless theme_settings.epic-toggle-footer-widgets}}
+                <ul class="footer-info-list">
+                    {{#each categories}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/unless}} {{{region name="footer_column_two--global"}}}
+            </article>
+            {{/gte}} {{#gte theme_settings.epic-footer-number-of-columns 3}}
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">
+                    {{theme_settings.epic-footer-heading-column-three}}
+                </h3>
+                {{#unless theme_settings.epic-toggle-footer-widgets}}
+                <ul class="footer-info-list">
+                    {{#and theme_settings.shop_by_brand_show_footer
+                    shop_by_brand.length}} {{#each shop_by_brand}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                    <li>
+                        <a href="{{urls.brands}}">{{lang 'common.view_all'}}</a>
+                    </li>
+                    {{else}} {{#each pages}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                    <li>
+                        <a href="{{urls.sitemap}}"
+                            >{{lang 'sitemap.page_title'}}</a
+                        >
+                    </li>
+                    {{/and}}
+                </ul>
+                {{/unless}} {{{region name="footer_column_three--global"}}}
+            </article>
+            {{/gte}} {{#gte theme_settings.epic-footer-number-of-columns 4}}
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">
+                    {{theme_settings.epic-footer-heading-column-four}}
+                </h3>
+                {{#unless theme_settings.epic-toggle-footer-widgets}}
+                <ul class="footer-info-list">
+                    {{#each pages}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                    <li>
+                        <a href="{{urls.sitemap}}"
+                            >{{lang 'sitemap.page_title'}}</a
+                        >
+                    </li>
+                </ul>
+                {{/unless}} {{{region name="footer_column_four--global"}}}
+            </article>
+            {{/gte}} {{#gte theme_settings.epic-footer-number-of-columns 5}}
+            <article class="footer-info-col footer-info-col--small">
+                <h3 class="footer-info-heading">
+                    {{theme_settings.epic-footer-heading-column-five}}
+                </h3>
+                {{#all settings.show_newsletter_box
+                theme_settings.epic-toggle-newsletter (if
+                theme_settings.epic-newsletter-location '===' 'column')}} {{#if
+                theme_settings.epic-toggle-newsletter}} {{#if
+                theme_settings.epic-toggle-newsletter-widgets}} {{{region
+                name="newsletter--column"}}} {{else if
+                settings.show_newsletter_box}}
+                <div class="newsletter-column">
+                    {{> components/common/subscription-form location='column'}}
+                </div>
+                {{/if}} {{else if settings.show_newsletter_box}}
+                <div class="newsletter-column">
+                    {{> components/common/subscription-form}}
+                </div>
+                {{/if}} {{else}} {{#unless
+                theme_settings.epic-toggle-footer-widgets}}
+                <ul class="footer-info-list">
+                    {{#each pages}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                    <li>
+                        <a href="{{urls.sitemap}}"
+                            >{{lang 'sitemap.page_title'}}</a
+                        >
+                    </li>
+                </ul>
+                {{/unless}} {{{region name="footer_column_five--global"}}}
+                {{/all}}
+            </article>
             {{/gte}}
         </section>
     </div>
     <div class="container">{{{region name="footer_below--global"}}}</div>
-    {{{region name="ssl_site_seal--global"}}}
-  {{#and theme_settings.show_powered_by theme_settings.show_copyright_footer}}
-      <div class="footer-bottom">
-          <div class="container">
-              <div class="footer-copyright footer-copyright__split">
-                  <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow" target="_blank">BigCommerce</a> and <a href="https://www.epicdesignlabs.com" target="_blank">Epic Design Labs</a></p>
-                  <div class="footer-copyright__split-copy">
+    {{{region name="ssl_site_seal--global"}}} {{#and
+    theme_settings.show_powered_by theme_settings.show_copyright_footer}}
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-copyright footer-copyright__split">
+                <p class="powered-by">
+                    {{lang 'footer.powered_by'}}
+                    <a
+                        href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC"
+                        rel="nofollow"
+                        target="_blank"
+                        >BigCommerce</a
+                    >
+                </p>
+                <div class="footer-copyright__split-copy">
                     {{> components/common/payment-icons}}
-                    <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} {{lang 'footer.rights_reserved'}}</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  {{else}}
-      {{#if theme_settings.show_powered_by}}
-          <div class="footer-bottom">
-              <div class="container">
-                  <div class="footer-copyright">
-                      <p class="powered-by">{{lang 'footer.powered_by'}} <a href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow" target="_blank">BigCommerce</a> and <a href="https://www.epicdesignlabs.com" target="_blank">Epic Design Labs</a></p>
-                  </div>
-              </div>
-          </div>
-      {{/if}}
-      {{#if theme_settings.show_copyright_footer}}
-          <div class="footer-bottom">
-              <div class="container">
-                  <div class="footer-copyright footer-copyright--{{theme_settings.epic-align-copyright}}{{#if theme_settings.epic-toggle-copyright-border-top}} footer-copyright--has-bdr{{/if}}">
-                      <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} {{lang 'footer.rights_reserved'}}</p>
-                      {{#if theme_settings.epic-toggle-copyright-links}}
-                          {{assignVar 'show_links' 'false'}}
-                          {{#all (if theme_settings.epic-copyright-link-one-label '!=='  '') (if theme_settings.epic-copyright-link-one-url '!==' '') (if (getVar 'show_links') '!==' 'true')}}
-                              {{assignVar 'show_links' 'true'}}
-                          {{/all}}
-                          {{#all (if theme_settings.epic-copyright-link-two-label '!=='  '') (if theme_settings.epic-copyright-link-two-url '!==' '') (if (getVar 'show_links') '!==' 'true')}}
-                              {{assignVar 'show_links' 'true'}}
-                          {{/all}}
-                          {{#all (if theme_settings.epic-copyright-link-three-label '!=='  '') (if theme_settings.epic-copyright-link-three-url '!==' '') (if (getVar 'show_links') '!==' 'true')}}
-                              {{assignVar 'show_links' 'true'}}
-                          {{/all}}
-                          {{#if (getVar 'show_links') '==' 'true'}}
-                              <ul class="footer-copyright-links">
-                                  {{#and (if theme_settings.epic-copyright-link-one-label '!=='  '') (if theme_settings.epic-copyright-link-one-url '!==' '')}}
-                                      <li class="footer-copyright-item">
-                                          <a href="{{theme_settings.epic-copyright-link-one-url}}">{{{theme_settings.epic-copyright-link-one-label}}}</a>
-                                      </li>
-                                  {{/and}}
-                                  {{#and (if theme_settings.epic-copyright-link-two-label '!=='  '') (if theme_settings.epic-copyright-link-two-url '!==' '')}}
-                                      <li class="footer-copyright-item">
-                                          <a href="{{theme_settings.epic-copyright-link-two-url}}">{{{theme_settings.epic-copyright-link-two-label}}}</a>
-                                      </li>
-                                  {{/and}}
-                                  {{#and (if theme_settings.epic-copyright-link-three-label '!=='  '') (if theme_settings.epic-copyright-link-three-url '!==' '')}}
-                                      <li class="footer-copyright-item">
-                                          <a href="{{theme_settings.epic-copyright-link-three-url}}">{{{theme_settings.epic-copyright-link-three-label}}}</a>
-                                      </li>
-                                  {{/and}}
-                              </ul>
-                          {{/if}}
-                      {{/if}}
-                      {{#if theme_settings.social_icon_placement_top}}
-                        {{#and (if theme_settings.social_icon_placement_bottom '!==' 'bottom_none') (if theme_settings.social_icon_placement_bottom '==' 'bottom_right')}}
-                            {{> components/common/social-links}}
-                        {{/and}}
-                      {{/if}}
-                      {{> components/common/payment-icons}}
-                  </div>
-              </div>
-          </div>
-      {{/if}}
-  {{/and}}
+                    <p class="powered-by">
+                        &copy; {{moment format="YYYY"}} {{settings.store_name}}
+                        {{lang 'footer.rights_reserved'}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}} {{#if theme_settings.show_powered_by}}
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-copyright">
+                <p class="powered-by">
+                    {{lang 'footer.powered_by'}}
+                    <a
+                        href="https://www.bigcommerce.com?utm_source=merchant&amp;utm_medium=poweredbyBC"
+                        rel="nofollow"
+                        target="_blank"
+                        >BigCommerce</a
+                    >
+                </p>
+            </div>
+        </div>
+    </div>
+    {{/if}} {{#if theme_settings.show_copyright_footer}}
+    <div class="footer-bottom">
+        <div class="container">
+            <div
+                class="footer-copyright footer-copyright--{{theme_settings.epic-align-copyright}}{{#if theme_settings.epic-toggle-copyright-border-top}} footer-copyright--has-bdr{{/if}}"
+            >
+                <p class="powered-by">
+                    &copy; {{moment format="YYYY"}} {{settings.store_name}}
+                    {{lang 'footer.rights_reserved'}}
+                </p>
+                {{#if theme_settings.epic-toggle-copyright-links}} {{assignVar
+                'show_links' 'false'}} {{#all (if
+                theme_settings.epic-copyright-link-one-label '!==' '') (if
+                theme_settings.epic-copyright-link-one-url '!==' '') (if (getVar
+                'show_links') '!==' 'true')}} {{assignVar 'show_links' 'true'}}
+                {{/all}} {{#all (if theme_settings.epic-copyright-link-two-label
+                '!==' '') (if theme_settings.epic-copyright-link-two-url '!=='
+                '') (if (getVar 'show_links') '!==' 'true')}} {{assignVar
+                'show_links' 'true'}} {{/all}} {{#all (if
+                theme_settings.epic-copyright-link-three-label '!==' '') (if
+                theme_settings.epic-copyright-link-three-url '!==' '') (if
+                (getVar 'show_links') '!==' 'true')}} {{assignVar 'show_links'
+                'true'}} {{/all}} {{#if (getVar 'show_links') '==' 'true'}}
+                <ul class="footer-copyright-links">
+                    {{#and (if theme_settings.epic-copyright-link-one-label
+                    '!==' '') (if theme_settings.epic-copyright-link-one-url
+                    '!==' '')}}
+                    <li class="footer-copyright-item">
+                        <a href="{{theme_settings.epic-copyright-link-one-url}}"
+                            >{{{theme_settings.epic-copyright-link-one-label}}}</a
+                        >
+                    </li>
+                    {{/and}} {{#and (if
+                    theme_settings.epic-copyright-link-two-label '!==' '') (if
+                    theme_settings.epic-copyright-link-two-url '!==' '')}}
+                    <li class="footer-copyright-item">
+                        <a href="{{theme_settings.epic-copyright-link-two-url}}"
+                            >{{{theme_settings.epic-copyright-link-two-label}}}</a
+                        >
+                    </li>
+                    {{/and}} {{#and (if
+                    theme_settings.epic-copyright-link-three-label '!==' '') (if
+                    theme_settings.epic-copyright-link-three-url '!==' '')}}
+                    <li class="footer-copyright-item">
+                        <a
+                            href="{{theme_settings.epic-copyright-link-three-url}}"
+                            >{{{theme_settings.epic-copyright-link-three-label}}}</a
+                        >
+                    </li>
+                    {{/and}}
+                </ul>
+                {{/if}} {{/if}} {{#if theme_settings.social_icon_placement_top}}
+                {{#and (if theme_settings.social_icon_placement_bottom '!=='
+                'bottom_none') (if theme_settings.social_icon_placement_bottom
+                '==' 'bottom_right')}} {{> components/common/social-links}}
+                {{/and}} {{/if}} {{> components/common/payment-icons}}
+            </div>
+        </div>
+    </div>
+    {{/if}} {{/and}}
 </footer>

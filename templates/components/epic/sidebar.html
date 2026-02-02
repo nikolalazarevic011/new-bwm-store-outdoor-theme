@@ -1,17 +1,27 @@
 <div class="sidebarBlock sidebarBlock-epic">
-    <span class="sidebarBlock-heading">{{theme_settings.epic-sidebar-heading}}</span>
+    <span class="sidebarBlock-heading"
+        >{{theme_settings.epic-sidebar-heading}}</span
+    >
     <ul class="navList">
-        {{#each categories}}
-            <li class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}">
-                {{> components/epic/sidebar-navigation-list}}
-            </li>
-        {{/each}}
-        {{#if theme_settings.epic-toggle-sidebar-webpages}}
-          {{#each pages}}
-            <li class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}">
-                {{> components/epic/sidebar-navigation-list}}
-            </li>
-          {{/each}}
-        {{/if}}
+        {{#each categories}} {{#if children}} {{#each children}}
+        <li
+            class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}"
+        >
+            {{> components/epic/sidebar-navigation-list}}
+        </li>
+        {{/each}} {{else}}
+        <li
+            class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}"
+        >
+            {{> components/epic/sidebar-navigation-list}}
+        </li>
+        {{/if}} {{/each}} {{#if theme_settings.epic-toggle-sidebar-webpages}}
+        {{#each pages}}
+        <li
+            class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}"
+        >
+            {{> components/epic/sidebar-navigation-list}}
+        </li>
+        {{/each}} {{/if}}
     </ul>
 </div>

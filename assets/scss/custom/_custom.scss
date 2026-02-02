@@ -85,7 +85,7 @@
     display: flex;
     justify-content: flex-end;
 }
-.picklistTable tbody td{
+.picklistTable tbody td {
     vertical-align: top;
 }
 
@@ -129,7 +129,9 @@
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 // Table format for downloads
@@ -202,7 +204,9 @@
     transition: all 0.2s ease;
     font-size: 0.9rem;
 
-    &:hover:not(.pagination-item--current):not(.pagination-item--ellipsis):not(.pagination-item--disabled) {
+    &:hover:not(.pagination-item--current):not(.pagination-item--ellipsis):not(
+            .pagination-item--disabled
+        ) {
         background: #f5f5f5;
         border-color: #ccc;
         cursor: pointer;
@@ -248,7 +252,8 @@
     .downloads-table {
         font-size: 0.85rem;
 
-        th, td {
+        th,
+        td {
             padding: 0.75rem 0.5rem;
         }
     }
@@ -282,5 +287,51 @@
         .button {
             width: 100%;
         }
+    }
+}
+
+// =============================================================================
+// Header Visual Fixes
+// =============================================================================
+
+// Fix: Add white background to header to prevent body background image from showing through
+.header {
+    background-color: #ffffff;
+}
+
+// =============================================================================
+// Marketing Banner Styles
+// =============================================================================
+
+.banners {
+    background-color: #ff6600; /* Default Orange */
+    color: #ffffff;
+    font-size: 16px;
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        line-height: 1.5;
+        color: #ffffff;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+}
+
+// =============================================================================
+// Header Adjustments
+// =============================================================================
+
+.header {
+    .container {
+        margin-top: 0;
     }
 }
