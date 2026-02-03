@@ -3,7 +3,7 @@
         <span class="sidebarBlock-heading">Categories</span>
         <ul class="navList">
             {{#each categories}} {{#if children}} {{#each children}}
-            <li class="navList-item">
+            <li class="navList-item" data-root-category="{{../name}}">
                 <a
                     class="navList-action"
                     href="{{url}}"
@@ -13,7 +13,7 @@
                 >
             </li>
             {{/each}} {{else}}
-            <li class="navList-item">
+            <li class="navList-item" data-root-category="{{name}}">
                 <a
                     class="navList-action"
                     href="{{url}}"
@@ -23,6 +23,77 @@
                 >
             </li>
             {{/if}} {{/each}}
+        </ul>
+        <script>
+            (function() {
+                try {
+                    // Quick helper to normalize path
+                    var path = window.location.pathname.toLowerCase();
+                    
+                    // 1. Broaden Spanish detection
+                    var isSpanish = path.indexOf('/espa-ol') > -1 || 
+                                    path.indexOf('/espanol') > -1 || 
+                                    path.indexOf('/esp') === 0 || 
+                                    path.indexOf('/es/') === 0 || 
+                                    path === '/es';
+
+                    // 2. Filter the top "All Categories" list
+                    var items = document.querySelectorAll('.navList-item[data-root-category]');
+                    if (items.length > 0) {
+                        items.forEach(function(item) {
+                            var root = item.getAttribute('data-root-category');
+                            if (root === 'Español' || root === 'Espanol') {
+                                item.style.display = isSpanish ? '' : 'none';
+                            } else {
+                                item.style.display = isSpanish ? 'none' : '';
+                            }
+                        });
+                    }
+
+                    // 3. Deduplicate Sidebar Blocks
+                    // If the specific category block (bottom) has the same links as the generic block (top),
+                    // hide the generic block to avoid showing the same list twice.
+                    var blocks = document.querySelectorAll('.sidebarBlock');
+                    if (blocks.length >= 2) {
+                        var genericBlock = blocks[0];
+                        var specificBlock = blocks[1]; // The one with specific title (e.g. ESPAÑOL)
+
+                        // Collect links to compare
+                        var getLinks = function(el) {
+                            return Array.from(el.querySelectorAll('a.navList-action'))
+                                        .map(function(a) { return a.getAttribute('href'); })
+                                        .join('|');
+                        };
+
+                        var genericLinks = getLinks(genericBlock);
+                        var specificLinks = getLinks(specificBlock);
+
+                        // If the specific block is not empty AND matches the visible generic links
+                        // (Wait, genericLinks includes hidden items too. We should check visible only or just trust the structure)
+                        // Simpler: If specific block has content, check if that content basically mirrors the top list.
+                        // Actually, if we are on the Root Page (e.g. /espa-ol/), the valid filtered list IS identical to the specific list.
+                        
+                        // Let's check visible links only for generic block
+                        var getVisibleLinks = function(el) {
+                            return Array.from(el.querySelectorAll('li.navList-item'))
+                                        .filter(function(li) { return li.style.display !== 'none'; })
+                                        .map(function(li) { return li.querySelector('a').getAttribute('href'); })
+                                        .join('|');
+                        };
+
+                        var visibleGeneric = getVisibleLinks(genericBlock);
+                        
+                        // If the visible generic links equal the specific links, hide the generic block
+                        if (visibleGeneric && visibleGeneric === specificLinks) {
+                            genericBlock.style.display = 'none';
+                        }
+                    }
+
+                } catch(e) {
+                    console.log('Sidebar filtering error:', e);
+                }
+            })();
+        </script>
         </ul>
     </div>
     {{#if category.subcategories}}

@@ -337,3 +337,13 @@
         padding-bottom: 15px; /* Adds equal internal space on bottom */
     }
 }
+
+// =============================================================================
+// Pagination Fixes
+// =============================================================================
+
+.pagination-item--current {
+    .pagination-link {
+        color: #ffffff;
+    }
+}

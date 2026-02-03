@@ -6,17 +6,50 @@
         {{#each categories}} {{#if children}} {{#each children}}
         <li
             class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}"
+            data-root-category="{{../name}}"
         >
             {{> components/epic/sidebar-navigation-list}}
         </li>
         {{/each}} {{else}}
         <li
             class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}"
+            data-root-category="{{name}}"
         >
             {{> components/epic/sidebar-navigation-list}}
         </li>
-        {{/if}} {{/each}} {{#if theme_settings.epic-toggle-sidebar-webpages}}
-        {{#each pages}}
+        {{/if}} {{/each}}
+        <script>
+            (function () {
+                try {
+                    var path = window.location.pathname.toLowerCase();
+                    var isSpanish =
+                        path.indexOf("/espa-ol") > -1 ||
+                        path.indexOf("/espanol") > -1 ||
+                        path.indexOf("/esp") === 0 ||
+                        path.indexOf("/es/") === 0 ||
+                        path === "/es";
+                    var items = document.querySelectorAll(
+                        ".sidebarBlock-epic .navList-item[data-root-category]",
+                    );
+
+                    if (items.length > 0) {
+                        items.forEach(function (item) {
+                            var root = item.getAttribute("data-root-category");
+                            // If root is Español
+                            if (root === "Español" || root === "Espanol") {
+                                item.style.display = isSpanish ? "" : "none";
+                            } else {
+                                // For non-Spanish categories (English)
+                                item.style.display = isSpanish ? "none" : "";
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.log("Sidebar filtering error:", e);
+                }
+            })();
+        </script>
+        {{#if theme_settings.epic-toggle-sidebar-webpages}} {{#each pages}}
         <li
             class="navList-item{{#if children}} navList-item--has-subMenu{{/if}}"
         >
